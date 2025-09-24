@@ -2,33 +2,15 @@
   padding-left: var(--spacing-3xl);
   padding-right: var(--spacing-3xl);
   @media #{$screen-xl} {
-    padding-left: calc((100vw - 1250px)/2);
-    padding-right: calc((100vw - 1250px)/2);
+    padding-left: calc((100vw - 1250px) / 2);
+    padding-right: calc((100vw - 1250px) / 2);
   }
 }
 
-
-@mixin aspect-ratio($height, $width) {
-  position: relative;
-
-  &:before {
-   content: "";
-   display: block;
-   height: 0;
-   width: 100%;
-   padding-top: ($height / $width) * 100%;
-  }
-
-  img,
-  svg {
-   position: absolute;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   font-family: 'object-fit: cover;';
-  }
+@mixin hide {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }

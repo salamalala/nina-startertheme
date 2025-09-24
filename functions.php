@@ -28,6 +28,7 @@ require get_template_directory() . '/lib/block-allowed.php';
 
 require get_template_directory() . '/lib/login-branding.php';
 require get_template_directory() . '/lib/dashboard.php';
+require get_template_directory() . '/lib/disable-comments.php';
 
 
 

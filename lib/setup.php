@@ -17,8 +17,6 @@ function XXXX_setup() {
   add_theme_support( 'menus' );
   add_theme_support(
     'html5', array(
-      'comment-form',
-      'comment-list',
       'gallery',
       'caption',
     )
@@ -29,7 +27,7 @@ function XXXX_setup() {
   // add theme support for editor styles
   // add_theme_support( 'align-wide' );
   add_theme_support( 'editor-styles' );
-  // add_theme_support( 'disable-layout-styles' );
+  add_theme_support( 'disable-layout-styles' );
 
 
 
