@@ -1,44 +1,41 @@
 {
-  "version": 1,
+  "version": 3,
   "settings": {
-    "layout": {
-         "contentSize": "75%",
-         "wideSize": "90%"
-     },
+    "spacing": {
+      "blockGap": false
+    },
     "color": {
       "custom": false,
       "customDuotone": false,
       "customGradient": false,
+      "defaultPalette": false,
+      "defaultDuotone": false,
+      "defaultGradients": false,
       "duotone": [],
       "gradients": [],
-      "palette": [
-        {
-            "name": "Black",
-            "slug": "black",
-            "color": "#000"
-        },
-        {
-            "name": "White",
-            "slug": "white",
-            "color": "#fff"
-        },
-        {
-            "name": "Dark Blue",
-            "slug": "dark-blue",
-            "color": "#1D3567"
-        },
-        {
-            "name": "Red",
-            "slug": "red",
-            "color": "#E02127"
-        }
-      ]
+      "palette": []
     },
     "typography": {
-            "customFontSize": false,
-            "dropCap": false,
-            "fontFamilies": [],
-            "fontSizes": []
+      "customFontSize": false,
+      "dropCap": false,
+      "fontFamilies": [],
+      "defaultFontSizes": false,
+      "fontStyle": false,
+      "fontSizes": [],
+      "fontWeight": false,
+      "letterSpacing": false,
+      "lineHeight": false,
+      "textDecoration": false,
+      "textTransform": false
+    },
+    "shadow": {
+      "defaultPresets": false
+    },
+    "layout": {
+      "contentSize": null,
+      "wideSize": null,
+      "allowEditing": false,
+      "allowCustomContentAndWideSize": false
     }
   }
 }

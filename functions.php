@@ -24,6 +24,7 @@ require get_template_directory() . '/lib/acf-blocks-callbacks.php';
 require get_template_directory() . '/lib/gutenberg-disable-fullscreen.php';
 require get_template_directory() . '/lib/gutenberg-disable-pattern.php';
 require get_template_directory() . '/lib/gutenberg-disable-heading-levels.php';
+require get_template_directory() . '/lib/gutenberg-disable-openverse.php';
 require get_template_directory() . '/lib/block-allowed.php';
 
 require get_template_directory() . '/lib/login-branding.php';

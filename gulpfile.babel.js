@@ -8,7 +8,6 @@ import gulpif from "gulp-if";
 import postcss from "gulp-postcss";
 import sourcemaps from "gulp-sourcemaps";
 import autoprefixer from "autoprefixer";
-import imagemin from "gulp-imagemin";
 import gulp from "gulp";
 import sass from "gulp-dart-sass";
 // deleting assets dist folder
@@ -32,10 +31,6 @@ var paths = {
     output: "assets/dist/css/",
     watch: "assets/src/css/scss/**/*.scss",
   },
-  image: {
-    input: "assets/src/media/**/*.{jpg,JPG,jpeg,png,svg,gif}",
-    output: "assets/dist/media/",
-  },
   scripts: {
     input: ["assets/src/js/main.js", "assets/src/js/editor.js"],
     output: "assets/dist/js",
@@ -44,8 +39,8 @@ var paths = {
   copy: {
     input: [
       "assets/src/**/*",
-      "!assets/src/{img,js,css}",
-      "!assets/src/{img,js,css}/**/*",
+      "!assets/src/{js,css}",
+      "!assets/src/{js,css}/**/*",
     ],
     output: "assets/dist",
   },
@@ -72,12 +67,6 @@ export const styles = () => {
     .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
     .pipe(dest(paths.styles.output))
     .pipe(server.stream());
-};
-
-export const images = () => {
-  return src(paths.image.input)
-    .pipe(gulpif(PRODUCTION, imagemin()))
-    .pipe(dest(paths.image.output));
 };
 
 export const copy = () => {
@@ -120,7 +109,6 @@ export const scripts = () => {
 
 export const watchForChanges = () => {
   watch(paths.styles.watch, styles);
-  watch(paths.image.input, series(images, reload));
   watch(paths.copy.input, series(copy, reload));
   watch(paths.scripts.watch, series(scripts, reload));
   watch(paths.php.watch, reload);
@@ -130,7 +118,9 @@ export const watchForChanges = () => {
 const server = browserSync.create();
 export const serve = (done) => {
   server.init({
-    proxy: "nina-starter-theme.local",
+    proxy: "forstbetrieb-bucheggberg.local",
+    open: true, // Automatically open browser
+    https: false, // Disable HTTPS
   });
   done();
 };
@@ -141,9 +131,9 @@ export const reload = (done) => {
 
 export const dev = series(
   clean,
-  parallel(styles, images, copy, scripts),
+  parallel(styles, copy, scripts),
   serve,
   watchForChanges
 );
-export const build = series(clean, parallel(styles, images, copy, scripts));
+export const build = series(clean, parallel(styles, copy, scripts));
 export default dev;
