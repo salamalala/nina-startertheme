@@ -1,12 +1,37 @@
 <?php
 
+$labels = [
+    'name'                  => _x($plural, 'Post Type General Name', 'xxxx'),
+    'singular_name'         => _x($single, 'Post Type Singular Name', 'xxxx'),
+    'menu_name'             => __($plural, 'xxxx'),
+    'name_admin_bar'        => __($single, 'xxxx'),
+    'add_new'               => __('Neu hinzufügen', 'xxxx'),
+    'add_new_item'          => sprintf(__('Neues %s hinzufügen', 'xxxx'), $single),
+    'edit_item'             => sprintf(__('%s bearbeiten', 'xxxx'), $single),
+    'new_item'              => sprintf(__('Neues %s', 'xxxx'), $single),
+    'view_item'             => sprintf(__('%s ansehen', 'xxxx'), $single),
+    'view_items'            => sprintf(__('%s ansehen', 'xxxx'), $plural),
+    'search_items'          => sprintf(__('%s durchsuchen', 'xxxx'), $plural),
+    'not_found'             => sprintf(__('Keine %s gefunden', 'xxxx'), strtolower($plural)),
+    'not_found_in_trash'    => sprintf(__('Keine %s im Papierkorb gefunden', 'xxxx'), strtolower($plural)),
+    'all_items'             => sprintf(__('Alle %s', 'xxxx'), $plural),
+    'archives'              => sprintf(__('%s-Archiv', 'xxxx'), $single),
+    'attributes'            => sprintf(__('%s-Attribute', 'xxxx'), $single),
+    'featured_image'        => __('Beitragsbild', 'xxxx'),
+    'set_featured_image'    => __('Beitragsbild festlegen', 'xxxx'),
+    'remove_featured_image' => __('Beitragsbild entfernen', 'xxxx'),
+    'use_featured_image'    => __('Als Beitragsbild verwenden', 'xxxx'),
+    'insert_into_item'      => sprintf(__('In %s einfügen', 'xxxx'), strtolower($single)),
+    'uploaded_to_this_item' => sprintf(__('Zu diesem %s hochgeladen', 'xxxx'), strtolower($single)),
+    'filter_items_list'     => sprintf(__('%s-Liste filtern', 'xxxx'), $plural),
+    'items_list_navigation' => sprintf(__('%s-Liste Navigation', 'xxxx'), $plural),
+    'items_list'            => sprintf(__('%s-Liste', 'xxxx'), $plural),
+];
+
 $args = [
-    'label'               => __($single, ' '),
-    'description'         => __($single, ' '),
-    'labels'              => [
-        'name'               => _x($plural, 'Post Type General Name', ' '),
-        'singular_name'      => _x($single, 'Post Type Singular Name', ' ')
-    ],
+    'label'               => __($single, 'xxxx'),
+    'description'         => __($single, 'xxxx'),
+    'labels'              => $labels,
     'supports'            => $support,
     'taxonomies'          => $taxonomies,
     'hierarchical'        => false,
